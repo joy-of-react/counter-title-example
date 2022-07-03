@@ -11,6 +11,10 @@ import {
 function Counter({ name, initialVal = 0 }) {
   const [count, setCount] = React.useState(initialVal);
 
+  React.useEffect(() => {
+    document.title = `(${count}) — Counter 2.0`;
+  }, [count]);
+
   return (
     <>
       <h2>Hi {name}!</h2>
